@@ -71,6 +71,7 @@
     <Compile Include="WeaponTypes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="Items\AnemosCompendium.png" />
     <Content Include="Items\AquaCompendium.png" />
     <Content Include="Items\ArcaneWorkBench.png" />
