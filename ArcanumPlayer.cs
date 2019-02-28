@@ -34,7 +34,7 @@ namespace Arcanum
         public override void PostUpdateBuffs()
         {
             Item heldItem = player.HeldItem;
-            WeaponTypes[] weaponTypes = Arcanum.weaponTypes;
+            WeaponTypes[] weaponTypes = Arcanum.Instance.WeaponTypes;
             foreach (WeaponTypes weaponTypes2 in weaponTypes)
             {
                 if (weaponTypes2.IDs.Contains(heldItem.type) && weaponTypes2.name == "Anemos")

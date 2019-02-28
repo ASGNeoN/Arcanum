@@ -3,50 +3,33 @@
   <Import Project="$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProjectGuid>{8298EAB6-0586-4BDA-9483-83624B66B13A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Arcanum</RootNamespace>
     <AssemblyName>Arcanum</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Arcanum.cs" />
-    <Compile Include="ArcanumPlayer.cs" />
-    <Compile Include="Items\AquaCompendium.cs" />
-    <Compile Include="Items\CryoCompendium.cs" />
-    <Compile Include="Items\GeoCompendium.cs" />
-    <Compile Include="Items\HerbaCompendium.cs" />
-    <Compile Include="Items\leo.cs" />
-    <Compile Include="Items\OmbraCompendium.cs" />
-    <Compile Include="Tooltips.cs" />
-    <Compile Include="Items\AnemosCompendium.cs" />
-    <Compile Include="Items\FosCompendium.cs" />
-    <Compile Include="Items\PyroCompendium.cs" />
-    <Compile Include="WeaponTypes.cs" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -67,13 +50,183 @@
     <Reference Include="System" />
     <Reference Include="Terraria">
       <HintPath>D:\SteamLibrary\steamapps\common\Terraria\Terraria.exe</HintPath>
+      <!--
+      <HintPath>c:\games\steam\steamapps\common\Terraria\Terraria.exe</HintPath>
+      -->
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\Weapons\" />
+    <Compile Include="Arcanum.cs" />
+    <Compile Include="ArcanumPlayer.cs" />
+    <Compile Include="Items\AnemosCompendium.cs" />
+    <Compile Include="Items\AquaCompendium.cs" />
+    <Compile Include="Items\CryoCompendium.cs" />
+    <Compile Include="Items\FosCompendium.cs" />
+    <Compile Include="Items\GeoCompendium.cs" />
+    <Compile Include="Items\HerbaCompendium.cs" />
+    <Compile Include="Items\leo.cs" />
+    <Compile Include="Items\OmbraCompendium.cs" />
+    <Compile Include="Items\PyroCompendium.cs" />
+    <Compile Include="Tooltips.cs" />
+    <Compile Include="WeaponTypes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="Items\AnemosCompendium.png" />
+    <Content Include="Items\AquaCompendium.png" />
+    <Content Include="Items\ArcaneWorkBench.png" />
+    <Content Include="Items\Armors\AnemosHat.png" />
+    <Content Include="Items\Armors\AnemosHat_Head.png" />
+    <Content Include="Items\Armors\AnemosRobe.png" />
+    <Content Include="Items\Armors\AnemosRobe_Arms.png" />
+    <Content Include="Items\Armors\AnemosRobe_Body.png" />
+    <Content Include="Items\Armors\AnemosRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\AnemosRobe_Legs.png" />
+    <Content Include="Items\Armors\AquaHat.png" />
+    <Content Include="Items\Armors\AquaHat_Head.png" />
+    <Content Include="Items\Armors\AquaRobe.png" />
+    <Content Include="Items\Armors\AquaRobe_Arms.png" />
+    <Content Include="Items\Armors\AquaRobe_Body.png" />
+    <Content Include="Items\Armors\AquaRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\AquaRobe_Legs.png" />
+    <Content Include="Items\Armors\CryoHat.png" />
+    <Content Include="Items\Armors\CryoHat_Head.png" />
+    <Content Include="Items\Armors\CryoRobe.png" />
+    <Content Include="Items\Armors\CryoRobe_Arms.png" />
+    <Content Include="Items\Armors\CryoRobe_Body.png" />
+    <Content Include="Items\Armors\CryoRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\CryoRobe_Legs.png" />
+    <Content Include="Items\Armors\ExampleRobe.png" />
+    <Content Include="Items\Armors\ExampleRobe_Arms.png" />
+    <Content Include="Items\Armors\ExampleRobe_Body.png" />
+    <Content Include="Items\Armors\ExampleRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\ExampleRobe_Legs.png" />
+    <Content Include="Items\Armors\FosHat.png" />
+    <Content Include="Items\Armors\FosHat_Head.png" />
+    <Content Include="Items\Armors\FosRobe.png" />
+    <Content Include="Items\Armors\FosRobe_Arms.png" />
+    <Content Include="Items\Armors\FosRobe_Body.png" />
+    <Content Include="Items\Armors\FosRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\FosRobe_Legs.png" />
+    <Content Include="Items\Armors\GeoHat.png" />
+    <Content Include="Items\Armors\GeoHat_Head.png" />
+    <Content Include="Items\Armors\GeoRobe.png" />
+    <Content Include="Items\Armors\GeoRobe_Arms.png" />
+    <Content Include="Items\Armors\GeoRobe_Body.png" />
+    <Content Include="Items\Armors\GeoRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\GeoRobe_Legs.png" />
+    <Content Include="Items\Armors\HerbaHat.png" />
+    <Content Include="Items\Armors\HerbaHat_Head.png" />
+    <Content Include="Items\Armors\HerbaRobe.png" />
+    <Content Include="Items\Armors\HerbaRobe_Arms.png" />
+    <Content Include="Items\Armors\HerbaRobe_Body.png" />
+    <Content Include="Items\Armors\HerbaRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\HerbaRobe_Legs.png" />
+    <Content Include="Items\Armors\OmbraHat.png" />
+    <Content Include="Items\Armors\OmbraHat_Head.png" />
+    <Content Include="Items\Armors\OmbraRobe.png" />
+    <Content Include="Items\Armors\OmbraRobe_Arms.png" />
+    <Content Include="Items\Armors\OmbraRobe_Body.png" />
+    <Content Include="Items\Armors\OmbraRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\OmbraRobe_Legs.png" />
+    <Content Include="Items\Armors\PyroHat.png" />
+    <Content Include="Items\Armors\PyroHat_Head.png" />
+    <Content Include="Items\Armors\PyroRobe.png" />
+    <Content Include="Items\Armors\PyroRobe_Arms.png" />
+    <Content Include="Items\Armors\PyroRobe_Body.png" />
+    <Content Include="Items\Armors\PyroRobe_FemaleBody.png" />
+    <Content Include="Items\Armors\PyroRobe_Legs.png" />
+    <Content Include="Items\Armors\SoulSlingerBreastplate.png" />
+    <Content Include="Items\Armors\SoulSlingerBreastplate_Arms.png" />
+    <Content Include="Items\Armors\SoulSlingerBreastplate_Body.png" />
+    <Content Include="Items\Armors\SoulSlingerBreastplate_FemaleBody.png" />
+    <Content Include="Items\Armors\SoulSlingerHat.png" />
+    <Content Include="Items\Armors\SoulSlingerHat_Head.png" />
+    <Content Include="Items\Armors\TinyEvilHat.png" />
+    <Content Include="Items\Armors\TinyEvilHat_Head.png" />
+    <Content Include="Items\CryoCompendium.png" />
+    <Content Include="Items\EAmber.png" />
+    <Content Include="Items\EAmberShrine.png" />
+    <Content Include="Items\EAmethyst.png" />
+    <Content Include="Items\EAmethystShrine.png" />
+    <Content Include="Items\EDiamond.png" />
+    <Content Include="Items\EDiamondShrine.png" />
+    <Content Include="Items\EEmerald.png" />
+    <Content Include="Items\EEmeraldShrine.png" />
+    <Content Include="Items\ERuby.png" />
+    <Content Include="Items\ERubyShrine.png" />
+    <Content Include="Items\ESapphire.png" />
+    <Content Include="Items\ESapphireShrine.png" />
+    <Content Include="Items\Essences\AnemosEssence.png" />
+    <Content Include="Items\Essences\AquaEssence.png" />
+    <Content Include="Items\Essences\CryoEssence.png" />
+    <Content Include="Items\Essences\FosEssence.png" />
+    <Content Include="Items\Essences\GeoEssence.png" />
+    <Content Include="Items\Essences\HerbaEssence.png" />
+    <Content Include="Items\Essences\Item_3453 - Copia.png" />
+    <Content Include="Items\Essences\ManaEssence.png" />
+    <Content Include="Items\Essences\OmbraEssence.png" />
+    <Content Include="Items\Essences\PyroEssence.png" />
+    <Content Include="Items\ETopaz.png" />
+    <Content Include="Items\ETopazShrine.png" />
+    <Content Include="Items\FosCompendium.png" />
+    <Content Include="Items\GeoCompendium.png" />
+    <Content Include="Items\HerbaCompendium.png" />
+    <Content Include="Items\leo.png" />
+    <Content Include="Items\OmbraCompendium.png" />
+    <Content Include="Items\PyroCompendium.png" />
+    <Content Include="Items\RawEssences\AnemosRawEssence.png" />
+    <Content Include="Items\RawEssences\AquaRawEssence.png" />
+    <Content Include="Items\RawEssences\CryoRawEssence.png" />
+    <Content Include="Items\RawEssences\FosRawEssence.png" />
+    <Content Include="Items\RawEssences\GeoRawEssence.png" />
+    <Content Include="Items\RawEssences\HerbaRawEssence.png" />
+    <Content Include="Items\RawEssences\OmbraRawEssence.png" />
+    <Content Include="Items\RawEssences\PyroRawEssence.png" />
+    <Content Include="Items\Recipetest.png" />
+    <Content Include="Items\Scroll - Copia.png" />
+    <Content Include="Items\Scroll.png" />
+    <Content Include="Items\ScrollsRecipes\CraftingScroll.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Anemos.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Cryo.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Fos.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Geo.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Herba.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Ombra.png" />
+    <Content Include="Items\ScrollsRecipes\Crafting_Scroll_Pyro.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll_Anemos.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll_Fos.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll_Geo.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll_Herba.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll_Ombra.png" />
+    <Content Include="Items\ScrollsRecipes\Open_Scroll_Pyro.png" />
+    <Content Include="Items\ScrollsRecipes\RecipeWaterBolt.png" />
+    <Content Include="Items\ScrollsRecipes\ScrollAqua.png" />
+    <Content Include="Items\Staves\Copper_Staff.png" />
+    <Content Include="Items\Staves\Fossil_Staff.png" />
+    <Content Include="Items\Staves\Gold_Staff.png" />
+    <Content Include="Items\Staves\Platinum_Staff.png" />
+    <Content Include="Items\Staves\Silver_Staff.png" />
+    <Content Include="Items\WaterySkull.png" />
+    <Content Include="Items\Weapons\AridStaff.png" />
+    <Content Include="Items\Weapons\BloodSpurt.png" />
+    <Content Include="Items\Weapons\BoulderStaff.png" />
+    <Content Include="Items\Weapons\EAmethystStaff.png" />
+    <Content Include="Items\Weapons\EDiamondStaff.png" />
+    <Content Include="Items\Weapons\EEmeraldStaff.png" />
+    <Content Include="Items\Weapons\EnergyStaff.png" />
+    <Content Include="Items\Weapons\ERubyStaff.png" />
+    <Content Include="Items\Weapons\ETopazStaff.png" />
+    <Content Include="Items\Weapons\PetalStaff.png" />
+    <Content Include="Items\Weapons\RainStaff.png" />
+    <Content Include="Items\Weapons\TestStaff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>"D:\SteamLibrary\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+    <!--
+    <PostBuildEvent>"c:\games\steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+    -->
   </PropertyGroup>
 </Project>

@@ -217,7 +217,7 @@ namespace Arcanum
 
   public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            WeaponTypes[] array = Arcanum.weaponTypes;
+            WeaponTypes[] array = Arcanum.Instance.WeaponTypes;
             foreach (WeaponTypes weaponTypes in array)
             {
                 if (weaponTypes.IDs.Contains(item.type))
