@@ -1,0 +1,4 @@
+author = ASGNeoN
+version = 0.1
+displayName = Arcanum
+enablePDB = true

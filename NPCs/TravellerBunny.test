@@ -1,0 +1,77 @@
+using System.Collections.Generic;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+
+namespace NeoNGhost.NPCs
+{
+	public class TravellerBunny : ModNPC
+	{
+		public override void SetDefaults()
+		{
+			npc.name = "Traveller Bunny";
+			npc.displayName = "Traveller Bunny";
+			npc.width = 18;
+            npc.townNPC = true;
+            npc.friendly = true;
+            npc.height = 40;
+			npc.lifeMax = 200;
+			npc.HitSound = SoundID.NPCHit1;
+			npc.DeathSound = SoundID.NPCDeath2;
+			npc.value = 60f;
+			npc.knockBackResist = 0.5f;
+			npc.aiStyle = 7;
+			Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Bunny];
+			aiType = NPCID.Bunny;
+			animationType = NPCID.Bunny;
+		}
+
+		public override float CanSpawn(NPCSpawnInfo spawnInfo)
+		{
+            return SpawnCondition.OverworldDayGrassCritter.Chance * 0.05f;
+		}
+        public override string GetChat()
+        {
+            switch (Main.rand.Next(3))
+            {
+                case 0:
+                    return "Where do i store all my goods? You see, my hat is magic!";
+                case 1:
+                    return "We Bunnies live in a distant place from here, full of carrots and without pesky slimes.";
+                default:
+                    return "Surprised by a Bunny that sells items? Well i need some coins to get back to my land!";
+            }
+        }
+        public override void SetChatButtons(ref string button, ref string button2)
+        {
+            button = Lang.inter[28];
+        }
+
+        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+        {
+            if (firstButton)
+            {
+                shop = true;
+            }
+        }
+
+        public override void SetupShop(Chest shop, ref int nextSlot)
+        {
+            int hood = Main.rand.Next(50);
+            shop.item[nextSlot].SetDefaults(ItemID.Carrot);
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(ItemID.FuzzyCarrot);
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(mod.ItemType("CarrotStaff"));
+            nextSlot++;
+            shop.item[nextSlot].SetDefaults(mod.ItemType("CarrotGun"));
+            nextSlot++;
+            if (hood == 0)
+            {
+                shop.item[nextSlot].SetDefaults(ItemID.BunnyHood);
+            }
+            nextSlot++;
+        }
+    }
+}

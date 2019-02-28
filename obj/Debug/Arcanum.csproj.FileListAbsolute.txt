@@ -1,0 +1,2 @@
+C:\Users\asgne\OneDrive\Documenti\My Games\Terraria\ModLoader\Mod Sources\Arcanum\obj\Debug\Arcanum.csprojAssemblyReference.cache
+C:\Users\asgne\OneDrive\Documenti\My Games\Terraria\ModLoader\Mod Sources\Arcanum\obj\Debug\Arcanum.csproj.CoreCompileInputs.cache
